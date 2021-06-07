@@ -19,6 +19,6 @@ public class CollectableGun : MonoBehaviour
 
   private void Update()
   {
-    transform.Rotate(0.2f, 0.0f, 0.0f, Space.Self);
+    transform.Rotate(0.0f, 0.2f, 0.0f, Space.Self);
   }
 }
