@@ -14,16 +14,12 @@ public class MouseController : MonoBehaviour {
 
     public MouseAxis mouseAxis = MouseAxis.MouseX;
 
-    private float _minVertical = -45.0f;
+    private float _minVertical = -35.0f;
     private float _maxVertical = 45.0f;
 
     private float _rotationX = 0.0f;
     private float _rotationY = 0.0f;
-
-    enum MouseMove { 
-        MouseX = 1,
-        MouseY = 2
-    }
+    
 
     // Update is called once per frame
     void Update() {

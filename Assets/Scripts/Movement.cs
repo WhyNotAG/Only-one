@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour {
-
+public class Movement : MonoBehaviour
+{
+    public Animator animator;
     public float speed = 12.0f;
-
+    public float vertical;
+    public float horizontal;
     private CharacterController _characterController;
     // gravity
     private float _fallGravity = 100.0f;
@@ -33,7 +35,10 @@ public class Movement : MonoBehaviour {
             movement = new Vector3(deltaX, 0, deltaZ);
             movement = Vector3.ClampMagnitude(movement, speed); //ограничение скорости по диагоняли
             movement = transform.TransformDirection(movement); //преобразование к глобальным координатам
-
+            
+            animator.SetFloat("vertical", Mathf.Abs(deltaX));
+            animator.SetFloat("horizontal", Mathf.Abs(deltaZ));
+            
             if (Input.GetButton("Jump")) {
                 movement.y = jumpSpeed;
                 _fallTime = _maxFallTime;
