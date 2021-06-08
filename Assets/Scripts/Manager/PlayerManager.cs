@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class PlayerManager : MonoBehaviour, IGameManager
     
     [SerializeField] private int _health { get; set; }
     [SerializeField] private int _armor { get; set; }
-    
+    [SerializeField] private Weapon _weapon;
     
     public void Startup()
     {
@@ -18,5 +19,13 @@ public class PlayerManager : MonoBehaviour, IGameManager
         _health = 100;
         _armor = 100;
         status = ManagersStatus.Started;
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            _weapon.Shoot();
+        }
     }
 }
