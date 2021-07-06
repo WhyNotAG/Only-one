@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
          GameObject bulletHit = Instantiate(decal);
          bulletHit.transform.position = hit.point + hit.normal * 0.05f;
          bulletHit.transform.rotation = Quaternion.LookRotation(-hit.normal);
-         Destroy(bulletHit, 10.0f);
+         Destroy(bulletHit, 10);
          Destroy(this.gameObject);
       }
 

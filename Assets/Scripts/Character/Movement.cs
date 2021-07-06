@@ -37,7 +37,6 @@ public class Movement : MonoBehaviour
             movement = transform.TransformDirection(movement); //преобразование к глобальным координатам
 
             vertical = (Mathf.Abs(deltaX) + Mathf.Abs(deltaZ) ) / speed;
-            //animator.SetFloat("vertical", Mathf.Abs(deltaX) + Mathf.Abs(deltaZ));
 
             if (Input.GetButton("Jump")) {
                 movement.y = jumpSpeed;
