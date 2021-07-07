@@ -39,6 +39,6 @@ public class WeaponHolder : MonoBehaviour
     public void Shoot()
     {
         Instantiate(bullet, shotPoint.position + shotPoint.forward, shotPoint.rotation);
-        weaponactiveGun.muzzleFlash.Play();
+        weaponactiveGun.MuzzleFlash.Play();
     }
 }

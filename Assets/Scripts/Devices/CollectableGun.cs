@@ -6,6 +6,7 @@ using UnityEngine;
 public class CollectableGun : MonoBehaviour
 {
   [SerializeField] private string gunName;
+  private const float SPEED = 100.0f;
 
   private void OnTriggerEnter(Collider other)
   {
@@ -19,6 +20,6 @@ public class CollectableGun : MonoBehaviour
 
   private void Update()
   {
-    transform.Rotate(0.0f, 0.2f, 0.0f, Space.Self);
+    transform.Rotate(Vector3.up * Time.deltaTime * SPEED, Space.Self);
   }
 }

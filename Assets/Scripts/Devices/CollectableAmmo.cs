@@ -6,6 +6,7 @@ using Random = System.Random;
 
 public class CollectableAmmo : MonoBehaviour
 {
+    private const float ROTATE_SPEED = 100.0f;
     [SerializeField] private string ammoName;
     [SerializeField] private float verticalSpeed = 10.0f;
     private Vector3 startPosition;
@@ -30,7 +31,7 @@ public class CollectableAmmo : MonoBehaviour
 
     private void Update()
     {
-       transform.Rotate(0.0f, 0.1f, 0.0f, Space.Self);
+       transform.Rotate(Vector3.up * Time.deltaTime * ROTATE_SPEED, Space.Self);
        transform.position = new Vector3(transform.position.x, 
             startPosition.y + 0.5f * Mathf.Sin(Time.time * verticalSpeed), transform.position.z);
     }
